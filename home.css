@@ -1,0 +1,30 @@
+.right-align
+{
+    float: right;
+}
+div>ul>li>a{
+    list-style: none;
+}
+.horizontal-list {
+    display: flex;
+    list-style-type: none;
+  }
+/* list theo hàng ngang */
+a 
+{
+    text-decoration: none; /* loại bỏ gạch chân */
+    color: black; /* màu xanh */
+}
+
+.button
+{
+    background-color:#395562;
+    color: aliceblue;
+}
+
+
+/* shop-css */
+.main-shop{
+    margin-top: 300px;
+    margin-bottom: 60px;
+}
