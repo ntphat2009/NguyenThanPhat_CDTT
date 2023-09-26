@@ -14,14 +14,18 @@ namespace WebCSharp.Models.EntityFrameWork
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Tên không được để trống")]
+        [StringLength(150, ErrorMessage = "Không được vượt quá 150 ký tự")]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Link không được để trống")]
+        [StringLength(150, ErrorMessage = "Không được vượt quá 150 ký tự")]
         public string Link { get; set; }
+        [Required(ErrorMessage = "Hình ảnh không được để trống")]
+        [StringLength(150, ErrorMessage = "Không được vượt quá 150 ký tự")]
         public string Image { get; set; }
         public string Position { get; set; }
         public int Sort_Order { get; set; }
-        [DefaultValue(2)]
+        [DefaultValue(1)]
         public int Status { get; set; }
     }
 }

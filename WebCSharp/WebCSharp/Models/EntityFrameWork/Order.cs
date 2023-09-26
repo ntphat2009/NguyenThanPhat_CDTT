@@ -21,18 +21,22 @@ namespace WebCSharp.Models.EntityFrameWork
         public int Id { get; set; }
         [Required]
         public int User_Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Tên không được để trống")]
+       
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Email không được để trống")]
+        [StringLength(150, ErrorMessage = "Email được vượt quá 150 ký tự")]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "SDT không được để trống")]
+        [StringLength(150, ErrorMessage = "Không được vượt quá 150 ký tự")]
         public string Phone { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Địa chỉ không được để trống")]
+        [StringLength(150, ErrorMessage = "Không được vượt quá 150 ký tự")]
         public string Address { get; set; }
         public string Note { get; set; }
 
 
-        [DefaultValue(2)]
+        [DefaultValue(1)]
         public int Status { get; set; }
 
         public ICollection<OrderDetail> OrderDetails { get; set; }

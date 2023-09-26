@@ -114,3 +114,8 @@ D:\PROJECT-CDTT\CDTT_NgyenThuanPhat\WEBMVC\WebCSharp\WebCSharp\bin\Microsoft.Owi
 D:\PROJECT-CDTT\CDTT_NgyenThuanPhat\WEBMVC\WebCSharp\WebCSharp\bin\System.Data.Common.dll
 D:\PROJECT-CDTT\CDTT_NgyenThuanPhat\WEBMVC\WebCSharp\WebCSharp\obj\Debug\WebCSharp.Migrations.CreatedDB.resources
 D:\PROJECT-CDTT\CDTT_NgyenThuanPhat\WEBMVC\WebCSharp\WebCSharp\obj\Debug\WebCSharp.csproj.GenerateResource.cache
+D:\PROJECT-CDTT\CDTT_NgyenThuanPhat\WEBMVC\WebCSharp\WebCSharp\obj\Debug\WebCSharp.Migrations.UpdateDB.resources
+D:\PROJECT-CDTT\CDTT_NgyenThuanPhat\WEBMVC\WebCSharp\WebCSharp\obj\Debug\WebCSharp.Migrations.UpdateDB2.resources
+D:\PROJECT-CDTT\CDTT_NgyenThuanPhat\WEBMVC\WebCSharp\WebCSharp\obj\Debug\WebCSharp.Migrations.UpdateDB3.resources
+D:\PROJECT-CDTT\CDTT_NgyenThuanPhat\WEBMVC\WebCSharp\WebCSharp\bin\CKFinder.dll
+D:\PROJECT-CDTT\CDTT_NgyenThuanPhat\WEBMVC\WebCSharp\WebCSharp\bin\CKFinder.pdb

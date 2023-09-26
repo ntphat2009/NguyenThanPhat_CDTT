@@ -16,11 +16,14 @@ namespace WebCSharp.Models.EntityFrameWork
         public int Id { get; set; }
         [Required]
         public string User_Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Tên không được để trống")]
+        [StringLength(150, ErrorMessage = "Không được vượt quá 150 ký tự")]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Email không được để trống")]
+        [StringLength(150, ErrorMessage = "Email được vượt quá 150 ký tự")]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "SDT không được để trống")]
+        [StringLength(20, ErrorMessage = "SDT được vượt quá 20 ký tự")]
         public string Phone { get; set; }
         [Required]
         public string Title { get; set; }
@@ -29,14 +32,12 @@ namespace WebCSharp.Models.EntityFrameWork
         [Required]
         public int Replay_id { get; set; }
 
-        
-
         public int Sort_Order { get; set; }
         public string Metakey { get; set; }
         public string Metadesc { get; set; }
 
 
-        [DefaultValue(2)]
+        [DefaultValue(1)]
         public int Status { get; set; }
     }
 }

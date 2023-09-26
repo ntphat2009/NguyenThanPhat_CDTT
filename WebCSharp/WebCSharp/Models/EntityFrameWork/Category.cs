@@ -12,7 +12,7 @@ namespace WebCSharp.Models.EntityFrameWork
     public class Category: CommonAbstract
     {
         public Category() { 
-        this.Posts = new HashSet<Post>();
+        //this.Posts = new HashSet<Post>();
         this.Products = new HashSet<Product>();
         }
 
@@ -22,7 +22,7 @@ namespace WebCSharp.Models.EntityFrameWork
         [Required(ErrorMessage = "Tên không được để trống")]
         [StringLength(150, ErrorMessage = "Không được vượt quá 150 ký tự")] 
         public string Name { get; set; }
-        [Required(ErrorMessage = "Tên không được để trống")]
+        [Required(ErrorMessage = "Slug không được để trống")]
         [StringLength(150, ErrorMessage = "Không được vượt quá 150 ký tự")]
         public string Slug { get; set; }
         public string Image { get; set; }
@@ -35,7 +35,7 @@ namespace WebCSharp.Models.EntityFrameWork
 
         [Required]
         public int Parent_Id { get; set; }
-        [DefaultValue(2)]
+        [DefaultValue(1)]
         public int Status { get; set; }
 
         public ICollection<Post> Posts { get; set; }

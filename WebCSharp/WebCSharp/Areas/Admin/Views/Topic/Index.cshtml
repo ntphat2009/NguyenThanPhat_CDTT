@@ -1,0 +1,146 @@
+﻿
+@model IEnumerable<WebCSharp.Models.EntityFrameWork.Topic>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section naviheader{
+
+    <!-- Content Header (Page header) -->
+
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Quản lý Chủ đề</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Chủ đề</li>
+                    </ol>
+
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+}
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Danh sách Chủ đề</h3>
+
+            <div class="card-tools">
+                <a href="/admin/topic/add" class="btn bg-success"><i class="fa fa-plus"></i> Thêm </a>
+                <a class=" btn  bg-danger" href="/topic/trash"> <i class="fa fa-trash"></i>Thùng Rác</a>
+            </div>
+        </div>
+        <div class="card-body">
+
+
+
+            <table class="table table-bordered" id="myTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Thứ tự</th>
+                        <th>Tên Menu</th>
+                        <th>slug Menu</th>
+                        <th>Chức năng</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    @if (Model != null && Model.Any())
+                    {
+                        var i = 1;
+                        foreach (var item in Model)
+                        {
+                            <tr id="trow_@item.Id">
+                                <td>
+                                    @item.Id
+                                </td>
+
+                                <td>@i</td>
+                                <td>@item.Name</td>
+                                <td>@item.Slug</td>
+                                <td>
+                                    <a class="btn btn-sm btn-success" href="/admin/topic/show/@item.Id"><i class="fa fa-eye"></i></a>
+
+                                    <a href="/admin/topic/edit/@item.Id" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a>
+
+                                    <a href="#" data-id="@item.Id"
+                                       class="btn btn-sm btn-danger btnDelete" title="delete">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+                                    @if (@item.Status == 1)
+                                    {
+                                        <a href="" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-toggle-on"></i>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="" class="btn btn-sm btn-danger">
+                                            <i class="fas fa-toggle-off"></i>
+                                        </a>
+                                    }
+
+
+
+
+                                </td>
+
+                            </tr>
+                            i++;
+                        }
+
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">Không có bản ghi nào</td>
+                        </tr>
+                    }
+                    @*@endforeach*@
+
+                </tbody>
+            </table>
+
+
+            @*</div>*@
+            <!-- /.card-body -->
+            <div class="card-footer">
+                Footer
+            </div>
+            <!-- /.card-footer-->
+        </div>
+        <!-- /.card -->
+
+</section>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('body').on('click', '.btnDelete', function () {
+                var id = $(this).data("id");
+                var conf = confirm('Bạn có muốn xóa bản ghi này không ?');
+                if (conf == true) {
+                    $.ajax({
+                        url: '/admin/topic/delete',
+                        type: 'POST',
+                        data: { id: id },
+                        success: function (rs) {
+                            if (rs.success) {
+                                $('#trow_' + id).remove();
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
